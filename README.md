@@ -6,6 +6,7 @@
 Terraform module to provide consistent label names and tags for resources.
 
 This is similar to [label](https://registry.terraform.io/modules/devops-workflow/label/local) except:
+
 - This accepts a list of names, instead of a string. And returns lists.
 - This uses null-resource instead of locals. This was required to be able to use count.
 
@@ -90,7 +91,6 @@ module "labels" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -102,8 +102,8 @@ module "labels" {
 | environment | Environment (ex: `dev`, `qa`, `stage`, `prod`). (Second or top level namespace. Depending on namespacing options) | string | - | yes |
 | monitor | TAG: Should resource be monitored | string | `UNDEF` | no |
 | names | Base names for resources | list | - | yes |
-| namespace-env | Prefix name with the environment. If true, format is: <env>-<name> | string | `true` | no |
-| namespace-org | Prefix name with the organization. If true, format is: <org>-<env namespaced name>. If both env and org namespaces are used, format will be <org>-<env>-<name> | string | `false` | no |
+| namespace-env | Prefix name with the environment. If true, format is: [env]-[name] | string | `true` | no |
+| namespace-org | Prefix name with the organization. If true, format is: [org]-[env namespaced name]. If both env and org namespaces are used, format will be [org]-[env]-[name] | string | `false` | no |
 | organization | Organization name (Top level namespace) | string | `` | no |
 | owner | TAG: Owner of the service | string | `UNDEF` | no |
 | product | TAG: Company/business product | string | `UNDEF` | no |
