@@ -9,19 +9,27 @@ This is similar to [label](https://registry.terraform.io/modules/devops-workflow
 - This accepts a list of names, instead of a string. And returns lists.
 - This uses null-resource instead of locals. This was required to be able to use count.
 
-The goal is to keep [label](https://registry.terraform.io/modules/devops-workflow/label/local) and [labels](https://registry.terraform.io/modules/devops-workflow/labels/null) in sync and update both at the same time for any changes. Where this is possible.
+The goal is to keep [label](https://registry.terraform.io/modules/devops-workflow/label/local)
+and [labels](https://registry.terraform.io/modules/devops-workflow/labels/null)
+in sync and update both at the same time for any changes.
+Where this is possible.
 
-A single name format will not solve every use case, so multiple variants are returned and there is a few options to affect how they get build. The general name convention is `{organization}-{environment}-{name}-{attributes}`. `Name` is required, the other 3 can be turned on/off individually. The delimiter (`-`) can be changed
+A single name format will not solve every use case, so multiple variants are
+returned and there is a few options to affect how they get build. The general
+name convention is `{organization}-{environment}-{name}-{attributes}`. `Name`
+is required, the other 3 can be turned on/off individually. The delimiter
+(`-`) can be changed
 
-All [devops-workflow](https://registry.terraform.io/modules/devops-workflow) modules will eventually use this or [label](https://registry.terraform.io/modules/devops-workflow/label/local).
+All [devops-workflow](https://registry.terraform.io/modules/devops-workflow)
+modules will eventually use this or [label](https://registry.terraform.io/modules/devops-workflow/label/local).
 
-**NOTE:** `null` refers to this using [null_resource](https://www.terraform.io/docs/configuration/locals.html)
+**NOTE:** `null` refers to this using [null_resource](https://www.terraform.io/docs/providers/null/index.html)
 
-Terraform registry: https://registry.terraform.io/modules/devops-workflow/labels/null
+[Terraform registry](https://registry.terraform.io/modules/devops-workflow/labels/null)
 
-## Usage:
+## Usage
 
-#### Basic Example
+### Basic Example
 
 ```hcl
 module "names" {
@@ -31,9 +39,10 @@ module "names" {
   environment   = "qa"
 }
 ```
+
 This will create 2 `id` with the values of `qa-name1` and `qa-name2`
 
-#### S3 Example
+### S3 Example
 
 ```hcl
 variable "names" {
@@ -49,6 +58,7 @@ module "s3-name" {
   namespace-org = "true"
 }
 ```
+
 This will create 2 `id` with the values of `corp-qa-data1` and `corp-qa-data2`
 
 Now reference `labels` outputs to create the S3 buckets
@@ -60,7 +70,8 @@ resource "aws_s3_bucket" "data" {
 }
 ```
 
-#### All Variables Example
+### All Variables Example
+
 Using in a module and exposing all settings to upstream caller.
 
 ```hcl
@@ -79,6 +90,7 @@ module "labels" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -121,7 +133,7 @@ module "labels" {
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM GRAPH HOOK -->
 
-### Resource Graph of plan
+## Resource Graph of plan
 
 ![Terraform Graph](resource-plan-graph.png)
 <!-- END OF PRE-COMMIT-TERRAFORM GRAPH HOOK -->
