@@ -17,7 +17,7 @@ Where this is possible.
 
 A single name format will not solve every use case, so multiple variants are
 returned and there is a few options to affect how they get build. The general
-name convention is `{organization}-{environment}-{name}-{attributes}`. `Name`
+name convention is `[organization]-[environment]-[name]-[attributes]`. `Name`
 is required, the other 3 can be turned on/off individually. The delimiter
 (`-`) can be changed
 
@@ -122,8 +122,8 @@ module "labels" {
 | id\_32 | ID truncated to 32 characters |
 | id\_attr\_20 | ID max size 20 characters by truncating `id_org` then appending `attributes` |
 | id\_attr\_32 | ID max size 32 characters by truncating `id_org` then appending `attributes` |
-| id\_env | If env namespace enabled <env>-<name> else <name> |
-| id\_org | If org namespace enabled <org>-<id_env> else <id_env> |
+| id\_env | If env namespace enabled [env]-[name] else [name] |
+| id\_org | If org namespace enabled [org]-[id_env] else [id_env] |
 | name | Name lowercase |
 | org\_attr\_20 | Internal debugging. DO NOT USE |
 | org\_attr\_32 | Internal debugging. DO NOT USE |

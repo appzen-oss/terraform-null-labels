@@ -34,12 +34,12 @@ output "id_attr_32" {
 }
 
 output "id_env" {
-  description = "If env namespace enabled <env>-<name> else <name>"
+  description = "If env namespace enabled [env]-[name] else [name]"
   value       = "${compact(concat(data.null_data_source.env.*.outputs.id, list("")))}"
 }
 
 output "id_org" {
-  description = "If org namespace enabled <org>-<id_env> else <id_env>"
+  description = "If org namespace enabled [org]-[id_env] else [id_env]"
   value       = "${compact(concat(data.null_data_source.org.*.outputs.id, list("")))}"
 }
 
