@@ -117,7 +117,6 @@ data "null_data_source" "tags_list" {
       "Environment",  "${local.env}",
       "Monitor",      "${var.monitor}",
       "Name",         "${element(data.null_data_source.ids.*.outputs.id, count.index)}",
-      "Organization", "${local.org}",
       "Owner",        "${var.owner}",
       "Product",      "${var.product}",
       "Service",      "${var.service}",
