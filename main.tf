@@ -12,13 +12,13 @@ module "enabled" {
 
 module "namespace-env" {
   source  = "devops-workflow/boolean/local"
-  version = "0.1.1"
+  version = "0.1.2"
   value   = "${var.namespace-env}"
 }
 
 module "namespace-org" {
   source  = "devops-workflow/boolean/local"
-  version = "0.1.1"
+  version = "0.1.2"
   value   = "${var.namespace-org}"
 }
 
