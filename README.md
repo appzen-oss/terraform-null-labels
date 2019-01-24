@@ -1,7 +1,7 @@
 # terraform-null-labels
 
 [![CircleCI](https://circleci.com/gh/appzen-oss/terraform-null-labels.svg?style=svg)](https://circleci.com/gh/appzen-oss/terraform-null-labels)
-[![Github release](https://img.shields.io/github/release/appzen-oss/terraform-null-label.svg)](https://github.com/appzen-oss/terraform-null-label/releases)
+[![Github release](https://img.shields.io/github/release/appzen-oss/terraform-null-labels.svg)](https://github.com/appzen-oss/terraform-null-labels/releases)
 
 Terraform module to provide consistent label names and tags for resources.
 
